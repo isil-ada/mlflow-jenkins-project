@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/883187104206211316/3c361c96718a42b9ba60d588b01c2bed/artifacts
+end_time: 1761843272275
+entry_point_name: ''
+experiment_id: '883187104206211316'
+lifecycle_stage: active
+run_id: 3c361c96718a42b9ba60d588b01c2bed
+run_name: dazzling-roo-266
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761843255026
+status: 3
+tags: []
+user_id: Huawei
