@@ -15,6 +15,32 @@ pipeline {
                 checkout scm
             }
         }
+
+        stage('Clean Old Environments') {
+        steps {
+            echo '=========================================='
+            echo 'Eski sanal ortamlar temizleniyor...'
+            echo '=========================================='
+            
+            script {
+                bat '''
+                    echo Jenkins workspace venv siliniyor...
+                    if exist "%WORKSPACE%\\venv" (
+                        rmdir /s /q "%WORKSPACE%\\venv"
+                        echo OK: Jenkins venv silindi
+                    )
+                    
+                    echo Desktop venv siliniyor...
+                    if exist "C:\\Users\\Huawei\\Desktop\\mlflow-jenkins-project\\venv" (
+                        rmdir /s /q "C:\\Users\\Huawei\\Desktop\\mlflow-jenkins-project\\venv"
+                        echo OK: Desktop venv silindi
+                    )
+                    
+                    echo Tum eski ortamlar temizlendi!
+                '''
+            }
+        }
+    }
         
         stage('Setup Environment') {
             steps {
